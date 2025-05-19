@@ -1,0 +1,165 @@
+.title {
+    padding: 3em;
+    margin: 0 15%;
+  }
+  
+  .hero-content {
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .info-section-learn {
+    padding: 0 15%;
+  }
+  
+  .hero-content h2 {
+    font-size: 2rem;
+  }
+  
+  .hero-content-learn h1 {
+    font-size: 2.5rem;
+    color: black;
+    text-shadow: none;
+    text-align: center;
+  }
+  
+  .paper {
+    margin: 5em 15%;
+  }
+  
+  .FAQ {
+    margin: 3em 15%;
+    font-family: Arial, sans-serif;
+    color: #333;
+  }
+  
+  .FAQ h2 {
+    font-size: 1.75rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  
+  .faq-item {
+    border-bottom: 1px solid #ddd;
+    padding: 1em;
+    transition: background-color 0.3s ease;
+  }
+  
+  .faq-item:hover {
+    background-color: #f5f5f5;
+  }
+  
+  .faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .faq-question h3 {
+    font-size: 1.25rem;
+    margin: 0;
+  }
+  
+  .toggle {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-left: 1rem;
+    color: #000;
+  }
+  
+  .faq-answer {
+    padding-top: 0.5em;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+  }
+  
+  .sel {
+    background-color: #ffc5c5;
+  }
+  
+  .tutorial-video {
+    margin: 3em 15%;
+    text-align: center;
+  }
+  
+  .video-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%; /* mantiene il 16:9 */
+    overflow: hidden;
+    margin-bottom: 2em; /* spazio aggiuntivo sotto il video */
+  }
+  
+  
+  .video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* MEDIA QUERY PER SCHERMI PICCOLI */
+  @media screen and (max-width: 600px) {
+    .title {
+      margin: 0 5%;
+      padding: 2em 0;
+    }
+    .hero-content-learn h1 {
+      font-size: 2rem;
+      margin: 0 1rem;
+    }
+    .info-section-learn {
+      margin: 0 5%;
+      padding: 0 0 1rem 0;
+    }
+    .tutorial-video {
+      margin: 2em 5%;
+      padding: 0;
+    }
+    .FAQ {
+      margin: 2em 5%;
+    }
+    .faq-item {
+      border-bottom: none;
+      margin-bottom: 1em;
+      padding: 1em;
+    }
+    .paper {
+      margin: 3em 5%;
+    }
+    .video-container {
+        margin-bottom: 2.5em;
+      }
+  }
+  
+  /* MEDIA QUERY PER SCHERMI MEDI (da 601px a 1024px) */
+  @media screen and (min-width: 601px) and (max-width: 1024px) {
+    .hero-content-learn h1 {
+      font-size: 2.3rem;
+      margin: 0 1.5rem;
+    }
+    .info-section-learn {
+      margin: 0 8%;
+      padding: 0 0 1rem 0;
+    }
+    .tutorial-video {
+      margin: 2.5em 8%;
+      padding: 0;
+    }
+    .FAQ {
+      margin: 2.5em 8%;
+    }
+    .faq-item {
+      padding: 1em;
+    }
+    .paper {
+      margin: 3.5em 8%;
+    }
+  }
+  

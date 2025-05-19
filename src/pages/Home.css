@@ -1,0 +1,256 @@
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+
+  .video-faded {
+    opacity: 0.5;
+  }
+  
+  .hero-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    transition: opacity 1s ease;
+  }
+  
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: black;
+    width: 100%;
+  }
+  
+  .hero-content h1 {
+    font-size: 3rem;
+    margin: auto;
+  }
+
+  .hero-content img {
+    width: 30%;
+  }
+  
+  .hero::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  
+  .info-section {
+    min-width: 100vw;
+    margin: 0;
+    padding: 2rem 15%;
+    background-color: #fff;
+    color: #000;
+    position: relative;
+    z-index: 3;
+  }
+  
+  .section-title {
+    margin-bottom: 1.5rem;
+    font-size: 1.75rem;
+    color: #333;
+  }
+  
+  .content-row {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+  }
+  
+  .col-left {
+    flex: 1;
+    text-align: left;
+  }
+  
+  .col-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  
+  .second-section .col-right {
+    text-align: right;
+    align-items: flex-end;
+  }
+  
+  .info-section p {
+    line-height: 1.6;
+    color: #333;
+  }
+  
+  .btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+  
+  .btn:hover {
+    background-color: #e73370;
+  }
+  
+  .fade-box {
+    position: relative;
+    display: inline-block;
+    padding: 1rem 2rem;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 4s;
+  }
+
+  .fade-box p {
+    font-size: medium;
+  }
+  
+  .fade-box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 0.5rem;
+    z-index: -2;
+  }
+  
+  .fade-box::after {
+    content: "";
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    right: -15px;
+    bottom: -15px;
+    border-radius: 1rem;
+    filter: blur(7px);
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  .second-title {
+    text-align: end;
+  }
+  
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+
+  .authors-section {
+    padding: 4rem 1rem;
+    text-align: center;
+  }
+  
+  .authors-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+  }
+  
+  .authors-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  .author-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 160px;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+  }
+  
+  .author-email {
+    font-size: 0.85rem;
+    color: #0066cc;
+    margin-top: 0.5rem;
+    text-decoration: none;
+    word-break: break-word;
+  }
+  
+  .author-email:hover {
+    text-decoration: underline;
+  }
+  
+  
+  @media screen and (max-width: 600px) {
+    .home {
+      overflow-x: hidden;
+    }
+    .hero-content h1 {
+      font-size: 2rem;
+    }
+    .info-section {
+      padding: 2rem 5%;
+    }
+    .content-row {
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .sec-row {
+        flex-direction: column-reverse;
+        align-items: end;
+    }
+    .fisrt-section {
+        text-align: start;
+    }
+    .first-row {
+        align-items: start;
+    }
+    .col-right {
+        align-items: start;
+        justify-content: left;
+    }
+  }
+  
+  @media screen and (min-width: 601px) and (max-width: 1024px) {
+    .hero-content h1 {
+      font-size: 2.5rem;
+    }
+    .info-section {
+      padding: 2rem 10%;
+      margin: 0;
+    }
+    .content-row {
+      gap: 1.5rem;
+    }
+  }
+  

@@ -1,0 +1,103 @@
+.paper-page {
+    padding: 4rem 1rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    color: #333;
+  }
+
+  .desktop-photo {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .mobile-photo {
+    display: none;
+  }
+
+  
+  .section-heading {
+    margin: 2.5rem 0 1rem;
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 4rem;
+  }
+  
+  .authors-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+  
+  .author-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 160px;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+  }
+  
+  .author-name,
+  .author-surname {
+    font-size: 1rem;
+  }
+  
+  .author-email {
+    font-size: 0.85rem;
+    color: #ff4081;
+    margin-top: 0.5rem;
+    text-decoration: underline;
+    text-align: center;
+  }
+  
+  .author-email:hover {
+    color: #333;
+  }
+
+  .author-main-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.07);
+    width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .author-note {
+    font-size: 0.75rem;
+    color: #888;
+    margin-top: 0.5rem;
+  }
+  
+  
+  .bibtex-block {
+    background-color: #f3f3f3;
+    padding: 1rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    overflow-x: auto;
+    margin-top: 1rem;
+    white-space: pre-wrap;
+    font-family: monospace;
+  }
+  
+  @media screen and (max-width: 900px) {
+    .mobile-photo {
+        display: block;
+        margin: 0 auto;
+        width: 100%;
+      }
+    
+    .desktop-photo {
+        display: none;
+    }
+  }
