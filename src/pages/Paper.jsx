@@ -3,18 +3,19 @@ import React from 'react';
 import './Paper.css';
 
 export default function Paper() {
-  const authors = [
-    { name: 'Vincenzo', surname: 'Marciano', email: 'vincenzo.marciano@eurecom.fr' },
-    { name: 'Kaiyuan', surname: 'Yang', email: 'kaiyuan.yang@uzh.ch' },
-    { name: 'Jon', surname: 'Cleary', email: 'jon.cleary@kcl.ac.uk' },
-    { name: 'Loic', surname: 'Legris', email: 'legris@chu-grenoble.fr' },
-    { name: 'Massimiliano D.', surname: 'Rizzaro', email: 'massimiliano.rizzaro@unimi.it' },
-    { name: 'Ioannis', surname: 'Pitsiorlas', email: 'ioannis.pitsiorlas@eurecom.fr' },
-    { name: 'Hava', surname: 'Chaptoukaev', email: 'hava.chaptoukaev@eurecom.fr' },
-    { name: 'Benjamin', surname: 'Lemasson', email: 'benjamin.lemasson@univ-grenoble-alpes.fr' },
-    { name: 'Bjoern', surname: 'Menze', email: 'bjoern.menze@uzh.ch' },
-    { name: 'Maria A.', surname: 'Zuluaga', email: 'maria.zuluaga@eurecom.fr' },
-  ];
+    const authors = [
+        { name: 'Vincenzo', surname: 'Marciano', affiliation: 'EURECOM', email: 'vincenzo.marciano@eurecom.fr' },
+        { name: 'Kaiyuan', surname: 'Yang', affiliation: 'University of Zurich', email: 'kaiyuan.yang@uzh.ch' },
+        { name: 'Jon', surname: 'Cleary', affiliation: "King's College London", email: 'jon.cleary@kcl.ac.uk' },
+        { name: 'Loic', surname: 'Legris', affiliation: 'CHU Grenoble', email: 'legris@chu-grenoble.fr' },
+        { name: 'Massimiliano D.', surname: 'Rizzaro', affiliation: 'University of Milan', email: 'massimiliano.rizzaro@unimi.it' },
+        { name: 'Ioannis', surname: 'Pitsiorlas', affiliation: 'EURECOM', email: 'ioannis.pitsiorlas@eurecom.fr' },
+        { name: 'Hava', surname: 'Chaptoukaev', affiliation: 'EURECOM', email: 'hava.chaptoukaev@eurecom.fr' },
+        { name: 'Benjamin', surname: 'Lemasson', affiliation: 'Grenoble Institute of Neuroscience', email: 'benjamin.lemasson@univ-grenoble-alpes.fr' },
+        { name: 'Bjoern', surname: 'Menze', affiliation: 'University of Zurich', email: 'bjoern.menze@uzh.ch' },
+        { name: 'Maria A.', surname: 'Zuluaga', affiliation: 'EURECOM', email: 'maria.zuluaga@eurecom.fr' },
+      ];
+      
 
   return (
     <section className="paper-page">
@@ -25,6 +26,7 @@ export default function Paper() {
       <div className="author-main-card">
             <div className="author-name">Daniele</div>
             <div className="author-surname">Falcetta</div>
+            <div className="author-affiliation">EURECOM</div>
             <a href="mailto:daniele.falcetta@eurecom.fr" className="author-email">
             daniele.falcetta@eurecom.fr
             </a>
@@ -34,10 +36,11 @@ export default function Paper() {
           <div key={i} className="author-card">
             <div className="author-name">{author.name}</div>
             <div className="author-surname">{author.surname}</div>
+            <div className="author-affiliation">{author.affiliation}</div>
             <a href={`mailto:${author.email}`} className="author-email">
-              {author.email}
+                {author.email}
             </a>
-          </div>
+        </div>
         ))}
       </div>
 
