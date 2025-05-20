@@ -18,9 +18,20 @@ export default function Paper() {
       
 
   return (
+    <>
+    <section className="highlight-section">
+        <div className="hero-content">
+        <h1 style={{ marginBottom: '1em' }}>Do you want to learn more about VesselVerse?</h1>
+        <a href="/VesselVerse.pdf" download="VesselVerse.pdf" className="btn">
+            <i className="fas fa-file-download" style={{ marginRight: '0.5rem' }}></i>
+            Download the paper
+        </a>
+        </div>
+    </section>
     <section className="paper-page">
       <img className='desktop-photo' src='/vesselverse rettangolo.png'/>
       <img className='mobile-photo' src='/logo_home.png'/>
+
 
       <h1 className="section-heading">Authors</h1>
       <div className="author-main-card">
@@ -59,9 +70,9 @@ export default function Paper() {
 
       <h2 className="section-heading">Funding</h2>
       <p>
-        This project was supported by <strong>EURECOM</strong> and collaborating institutions.
         Funding details will be updated soon.
       </p>
     </section>
+    </>
   );
 }

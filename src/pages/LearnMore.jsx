@@ -78,15 +78,6 @@ function LearnMore() {
           ))}
         </div>
       </section>
-
-      <section className="paper">
-        <div className="hero-content">
-          <h1 style={{ marginBottom: '1em' }}>Do you want to learn more about VesselVerse?</h1>
-          <a href="/VesselVerse.pdf" download="VesselVerse.pdf" className="btn">
-            Download the paper
-          </a>
-        </div>
-      </section>
     </div>
   );
 }

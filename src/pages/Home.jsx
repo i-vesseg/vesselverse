@@ -1,6 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import './Home.css';
 
+const newsItems = [
+  { date: "May 2025", text: "VesselVerse accepted at MICCAI 2025", isNew: false},
+  { date: "June 2025 (planned)", text: "Release of code and dataset via GitHub", isNew: true },
+];
+
+
 function Home() {
   const [videoEnded, setVideoEnded] = useState(false);
 
@@ -39,7 +45,24 @@ function Home() {
         </div>
       </section>
 
-      <section className="info-section first-section">
+      <section className="info-section news-section">
+        <h2 className="section-title" style={{textAlign:'center'}}>News & Updates</h2>
+        <div className="news-grid">
+          {newsItems.map((item, index) => (
+            <div className="news-card" key={index}>
+              <div className="news-header">
+                <span className="news-date">{item.date}</span>
+                {item.isNew && <span className="news-badge">NEW</span>}
+              </div>
+              <p className="news-text">{item.text}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+
+
+      <section className="info-section first-section" style={{paddingTop:'5rem'}}>
         <h2 className="section-title">What is VesselVerse?</h2>
         <div className="content-row first-row">
           <div className="col-left">
@@ -54,7 +77,7 @@ function Home() {
         </div>
       </section>
 
-      <section className="info-section second-section">
+      <section className="info-section second-section" style={{paddingTop:'5rem', paddingBottom:'5rem'}}>
         
         <h2 className="section-title second-title">
           Why is it important?
