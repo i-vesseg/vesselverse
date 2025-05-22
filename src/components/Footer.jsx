@@ -13,7 +13,7 @@ function Footer() {
         </div>
         <p className="footer-copy">
           Copyright © 2025 | EURECOM | All rights reserved.<br/>
-          Website created by <strong>
+          Website, graphics & animations by <strong>
             <a target="_blank"
             rel="noopener noreferrer"
             style={{color:'#ff4081'}}
