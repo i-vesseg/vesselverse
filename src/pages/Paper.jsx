@@ -69,9 +69,10 @@ export default function Paper() {
       </pre>
 
       <h2 className="section-heading">Funding</h2>
-      <p>
-        Funding details will be updated soon.
-      </p>
+      <div className='funding'>
+        <img src='/ANR-funded-project.jpg'/>
+        <img src='/EN_fundedbyEU_VERTICAL_RGB_POS.png'/>
+      </div>
     </section>
     </>
   );

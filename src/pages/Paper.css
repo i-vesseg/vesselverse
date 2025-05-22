@@ -101,6 +101,15 @@
     white-space: pre-wrap;
     font-family: monospace;
   }
+
+  .funding {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .funding img {
+    width: 30%;
+  }
   
   @media screen and (max-width: 900px) {
     .mobile-photo {
