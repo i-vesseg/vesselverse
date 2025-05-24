@@ -29,7 +29,7 @@ function Dataset() {
               target="_blank"
               className="btn clickable"
             >
-              <i className="fab fa-github" style={{ marginRight: '0.5rem' }}></i>
+              <img className='btn' src='/github_icon.png'/>
               More about the Dataset
             </a>
           </div>

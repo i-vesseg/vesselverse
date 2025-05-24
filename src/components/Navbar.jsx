@@ -25,7 +25,7 @@ function Navbar() {
         <NavLink className={({ isActive }) => isActive ? 'nav-btn active' : 'nav-btn'} to="/dataset" onClick={() => setMenuOpen(false)}>Dataset</NavLink>
         <NavLink className={({ isActive }) => isActive ? 'nav-btn active' : 'nav-btn'} to="/framework" onClick={() => setMenuOpen(false)}>Framework</NavLink>
         <NavLink className={({ isActive }) => isActive ? 'nav-btn active' : 'nav-btn'} to="/learn-more" onClick={() => setMenuOpen(false)}>Learn More</NavLink>
-        <NavLink className={({ isActive }) => isActive ? 'btn active' : 'btn'} to="/paper" onClick={() => setMenuOpen(false)}>The Paper</NavLink>
+        <NavLink className={({ isActive }) => isActive ? 'nav-btn-fill active' : 'nav-btn-fill'} to="/paper" onClick={() => setMenuOpen(false)}>The Paper<img src='/github_icon.png'/></NavLink>
 
         </div>
       </div>

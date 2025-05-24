@@ -10,6 +10,12 @@
     background-color: #FFE8E8;
     padding: 2rem 1rem;
   }
+
+  .button-paper{
+    display: flex;
+    flex-direction: row;
+    gap: 1em
+  }
   
 
   .desktop-photo {
@@ -121,4 +127,9 @@
     .desktop-photo {
         display: none;
     }
+
+    .button-paper{
+        display: flex;
+        flex-direction: column;
+      }
   }

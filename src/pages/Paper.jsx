@@ -21,11 +21,29 @@ export default function Paper() {
     <>
     <section className="highlight-section">
         <div className="hero-content">
-        <h1 style={{ marginBottom: '1em' }}>Do you want to learn more about VesselVerse?</h1>
-        <a href="/VesselVerse.pdf" download="VesselVerse.pdf" className="btn">
-            <i className="fas fa-file-download" style={{ marginRight: '0.5rem' }}></i>
-            Download the paper
-        </a>
+            <h1 style={{ marginBottom: '1em' }}>Do you want to learn more about VesselVerse?</h1>
+            <div className='button-paper'>
+                <a href="/VesselVerse.pdf" download="VesselVerse.pdf" className="btn">
+                    <i className="fas fa-file-download" style={{ marginRight: '0.5rem' }}></i>
+                    Download the paper
+                </a>
+                <a
+                    href="https://anonymous.4open.science/r/VesselverseDatasets"
+                    target="_blank"
+                    className="btn clickable"
+                    >
+                    <img className='btn' src='/github_icon.png'/>
+                    More about the Dataset
+                </a>
+                <a
+                    href="https://anonymous.4open.science/r/VesselverseModule"
+                    target="_blank"
+                    className="btn clickable"
+                >
+                    <img className='btn' src='/github_icon.png'/>
+                    More about the Framework
+                </a>
+            </div>
         </div>
     </section>
     <section className="paper-page">
