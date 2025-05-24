@@ -177,6 +177,7 @@ a{
   height: 2em;
   padding: 0;
   margin-bottom: 0;
+  width: auto;
 }
 .nav-btn-fill:hover {
   background-color: #e73370;
@@ -210,6 +211,7 @@ a{
 .btn img {
   margin-right: 0.5em;
   height: 2em;
+  width: auto;
   padding: 0;
 }
 
