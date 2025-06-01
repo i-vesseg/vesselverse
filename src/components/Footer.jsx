@@ -4,23 +4,25 @@ import { Link } from 'react-router-dom'
 function Footer() {
   return (
     <footer className="footer">
-      <div className="footer-container">
-        <img src="/logo_esteso_trasp.png"/>
-        <div className="footer-icons">
-          <Link to="https://anonymous.4open.science/r/VesselverseDatasets" target="_blank" className="icon-link">
-            <i className="fab fa-github" aria-hidden="true"></i>
-          </Link>
+      <div className="footer-container1">
+        <img src="/logo_esteso_trasp.png" className='logo-footer'/>
+        Copyright © 2025 | EURECOM | All rights reserved.
+      </div>
+      <div className="footer-container2">
+        <div className='line-footer'>
+          <img src="/Al4Health.png" alt="Al4Health@EURECOM"/>
+          <span className='partOf'>part of Al4Health@EURECOM</span> 
         </div>
-        <p className="footer-copy">
-          Copyright © 2025 | EURECOM | All rights reserved.<br/>
-          Website, graphics & animations by <strong>
+        <div className='line-footer'>
+          <img src="/logo_alex.png" alt="Al4Health@EURECOM"/>
+          <span className='partOf'>Website, graphics & animations by <strong>
             <a target="_blank"
             rel="noopener noreferrer"
             style={{color:'#ff4081'}}
             href='https://alexargese.github.io'>Alex Argese
             </a>
-          </strong>
-        </p>
+          </strong></span> 
+        </div>
       </div>
     </footer>
   )
