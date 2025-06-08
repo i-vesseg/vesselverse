@@ -115,17 +115,24 @@ a{
 }
 
 /* FOOTER */
-.footer {
+
+.big-footer {
   background-color: #ffe8e8;
   padding: 2rem 1rem;
   text-align: center;
   position: relative;
   z-index: 2;
   font-family: 'Josefin Sans', sans-serif;
+}
+.footer {
   display: flex;
   justify-content: center;
 }
-
+.footer-note {
+  margin-top: 1em;
+  font-size: 0.8em;
+  font-family: 'Josefin Sans', sans-serif;
+}
 .footer-container1 {
   position: relative;
   margin: 0 0;
@@ -311,13 +318,16 @@ a{
     margin: 0.5rem 0;
   }
 
-  .footer {
+  .big-footer {
     background-color: #ffe8e8;
     padding: 2rem 1rem;
     text-align: center;
     position: relative;
     z-index: 2;
     font-family: 'Josefin Sans', sans-serif;
+  }
+
+  .footer {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -393,6 +403,10 @@ a{
     font-family: 'Josefin Sans', sans-serif;
     margin-left: 1em;
     font-size: 0.8em;
+  }
+  .footer-note {
+    margin-top: 0.5em;
+    font-size: 0.6em;
   }
 }
 
