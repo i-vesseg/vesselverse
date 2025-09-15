@@ -44,6 +44,8 @@ function LearnMore() {
         "Annotation quality is maintained through a combination of <strong>expert validation</strong>, <strong>consensus generation using the STAPLE algorithm</strong>, and a robust <strong>version control system</strong> that tracks all modifications. This ensures that annotations are accurate, consistent, and transparently auditable."
     },
   ];
+
+  const base = import.meta.env.BASE_URL;
   
   return (
     <div>
@@ -62,7 +64,7 @@ function LearnMore() {
           <h1 style={{ paddingBottom: '1em' }}>Tutorial: How to use VesselVerse on 3DSlicer</h1>
           <div className="video-container">
             <video 
-              src="/DEMO_VESSELVERSE.mp4" 
+              src={`${base}/DEMO_VESSELVERSE.mp4`} 
               controls
               title="Tutorial VesselVerse su 3DSlicer">
             </video>

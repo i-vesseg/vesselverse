@@ -1,3 +1,4 @@
+// src/VerticalTimeline.jsx
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import "./VerticalTimeline.css";
@@ -9,14 +10,10 @@ function useScrollDirection() {
     let lastScrollY = window.pageYOffset;
     const handleScroll = () => {
       const currentScrollY = window.pageYOffset;
-      if (currentScrollY > lastScrollY) {
-        setScrollDir("down");
-      } else if (currentScrollY < lastScrollY) {
-        setScrollDir("up");
-      }
+      if (currentScrollY > lastScrollY) setScrollDir("down");
+      else if (currentScrollY < lastScrollY) setScrollDir("up");
       lastScrollY = currentScrollY > 0 ? currentScrollY : 0;
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -24,6 +21,7 @@ function useScrollDirection() {
   return scrollDir;
 }
 
+// Manteniamo i path “logici” e aggiungiamo BASE_URL in render
 const steps = [
   {
     id: "annotations",
@@ -59,20 +57,25 @@ const steps = [
 
 export default function VerticalTimeline() {
   const scrollDirection = useScrollDirection();
+  const base = import.meta.env.BASE_URL;
 
   const animationVariant =
     scrollDirection === "down"
       ? { hidden: { y: 100, opacity: 0 }, visible: { y: 0, opacity: 1 } }
       : { hidden: { y: -100, opacity: 0 }, visible: { y: 0, opacity: 1 } };
 
+  // aggiunge BASE_URL davanti ai path che iniziavano con “/…”
+  const stepsWithBase = steps.map((s) => ({
+    ...s,
+    image: `${base}${s.image.replace(/^\//, "")}`,
+  }));
+
   return (
     <div className="vertical-timeline-container">
-
       <div className="vertical-line"></div>
 
-      {steps.map((step) => (
+      {stepsWithBase.map((step) => (
         <div className="timeline-step" key={step.id}>
-
           <div className="step-circle"></div>
 
           <motion.div
@@ -80,7 +83,7 @@ export default function VerticalTimeline() {
             variants={animationVariant}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.5 }}  
+            viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.6 }}
           >
             <div className="text-block">
@@ -88,7 +91,7 @@ export default function VerticalTimeline() {
               <p
                 className="step-description"
                 dangerouslySetInnerHTML={{ __html: step.description }}
-              ></p>
+              />
             </div>
             <div className="image-block">
               <img src={step.image} alt={step.title} className="step-image" />

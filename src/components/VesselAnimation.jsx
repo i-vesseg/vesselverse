@@ -5,6 +5,8 @@ export default function VesselAnimation() {
   const containerRef = useRef(null);
   const handleRef = useRef(null);
 
+  const base = import.meta.env.BASE_URL;
+
   const handleMouseMove = (e) => {
     if (!containerRef.current) return;
     const rect = containerRef.current.getBoundingClientRect();
@@ -29,7 +31,7 @@ export default function VesselAnimation() {
       onMouseMove={handleMouseMove}
     >
       <img
-        src="/brain_xray_before.png"
+        src={`${base}/brain_xray_before.png`}
         alt="Brain X-ray Before"
         style={{
           position: "absolute",
@@ -53,7 +55,7 @@ export default function VesselAnimation() {
         }}
       >
         <img
-          src="/brain_xray_after.png"
+          src={`${base}/brain_xray_after.png`}
           alt="Brain X-ray After"
           style={{
             width: "100%",
