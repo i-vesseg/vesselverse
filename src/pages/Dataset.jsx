@@ -1,9 +1,11 @@
-import React from 'react';
-import DatasetExplorer from '../components/DatasetExplorer';
-import './Dataset.css';
-
+import React from 'react'
+import { Link } from 'react-router-dom'
+import DatasetExplorer from '../components/DatasetExplorer'
+import './Dataset.css'
 
 function Dataset() {
+  const base = import.meta.env.BASE_URL
+
   return (
     <div className="dataset-page">
       <header className="dataset-hero">
@@ -22,14 +24,15 @@ function Dataset() {
             <p style={{ textAlign: 'start' }}>
               The <strong>VesselVerse database</strong> is the largest publicly available collection of brain vessel annotations to date, comprising <strong>1,130 images</strong> from three major datasets: <strong>IXI</strong>, <strong>TubeTK</strong>, and <strong>TopCoW</strong>.<br/>These images cover multiple imaging modalities including <strong>TOF-MRA</strong> (Time-of-Flight Magnetic Resonance Angiographies) and <strong>CTA</strong> (Computed Tomography angiographies).<br/>
               Each image in the database is associated with <strong>multiple expert-level annotations</strong> (including both <strong>manual</strong> and <strong>automatically generated</strong> segmentations). The automated annotations were produced by a range of state-of-the-art models such as <strong>nnU-Net</strong>, <strong>A2V</strong>, <strong>SPOCKMIP (S-MIP in the table below)</strong>, <strong>VesselBoost (VB)</strong>, <strong>JOB-VS</strong>, and <strong>StochasticBatchAL (SB-AL)</strong>, as well as traditional techniques like the <strong>Frangi filter (FF)</strong>.<br/>
-              For each dataset, VesselVerse also provides a <strong><a href='/framework#pillars' style={{ color: '#ff6565' }}>STAPLE-based consensus annotation</a></strong>, allowing users to access high-confidence segmentations derived from multiple inputs.
+              For each dataset, VesselVerse also provides a <strong><Link to="/framework#pillars" style={{ color: '#ff6565' }}>STAPLE-based consensus annotation</Link></strong>, allowing users to access high-confidence segmentations derived from multiple inputs.
             </p>
             <a
               href="https://anonymous.4open.science/r/VesselverseDatasets"
               target="_blank"
               className="btn clickable"
+              rel="noopener noreferrer"
             >
-              <img className='btn' src='/github_icon.png'/>
+              <img className='btn' src={`${base}github_icon.png`} alt="" />
               More about the Dataset
             </a>
           </div>

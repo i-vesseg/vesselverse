@@ -1,28 +1,29 @@
-import React, { useEffect, useState } from 'react';
-import './Home.css';
+import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
+import './Home.css'
 
 const newsItems = [
-  { date: "May 2025", text: "VesselVerse accepted at MICCAI 2025", isNew: false},
-  { date: "June 2025 (planned)", text: "Release of code and dataset via GitHub", isNew: true },
-];
-
+  { date: 'May 2025', text: 'VesselVerse accepted at MICCAI 2025', isNew: false },
+  { date: 'June 2025 (planned)', text: 'Release of code and dataset via GitHub', isNew: true },
+]
 
 function Home() {
-  const [videoEnded, setVideoEnded] = useState(false);
+  const [videoEnded, setVideoEnded] = useState(false)
+  const base = import.meta.env.BASE_URL
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+    window.scrollTo(0, 0)
+  }, [])
 
   const handleVideoEnded = () => {
-    setVideoEnded(true);
+    setVideoEnded(true)
     if (window.scrollY === 0) {
-      const firstSection = document.querySelector('.fade-box');
+      const firstSection = document.querySelector('.fade-box')
       if (firstSection) {
-        firstSection.scrollIntoView({ behavior: 'smooth' });
+        firstSection.scrollIntoView({ behavior: 'smooth' })
       }
     }
-  };
+  }
 
   return (
     <div className='home'>
@@ -34,13 +35,13 @@ function Home() {
           playsInline
           onEnded={handleVideoEnded}
         >
-          <source src="/intro_sito.mp4" type="video/mp4" />
+          <source src={`${base}intro_sito.mp4`} type="video/mp4" />
           Your browser does not support the video.
         </video>
 
         <div className="hero-content">
           <div className="fade-box">
-            <img src="/logo_home.png"/>
+            <img src={`${base}logo_home.png`} alt="VesselVerse" />
           </div>
         </div>
       </section>
@@ -60,8 +61,6 @@ function Home() {
         </div>
       </section>
 
-
-
       <section className="info-section first-section" style={{paddingTop:'5rem'}}>
         <h2 className="section-title">What is VesselVerse?</h2>
         <div className="content-row first-row">
@@ -71,20 +70,17 @@ function Home() {
             </p>
           </div>
           <div className="col-right">
-            <a href="/dataset" className="btn">Explore the Dataset</a>
-            <a href="/framework" className="btn">Explore the framework</a>
+            <Link to="/dataset" className="btn">Explore the Dataset</Link>
+            <Link to="/framework" className="btn">Explore the framework</Link>
           </div>
         </div>
       </section>
 
       <section className="info-section second-section" style={{paddingTop:'5rem', paddingBottom:'5rem'}}>
-        
-        <h2 className="section-title second-title">
-          Why is it important?
-        </h2>
+        <h2 className="section-title second-title">Why is it important?</h2>
         <div className="content-row sec-row">
           <div className="col-left">
-            <a href="/learn-more" className="btn">Learn more</a>
+            <Link to="/learn-more" className="btn">Learn more</Link>
           </div>
           <div className="col-right">
             <p className='mobile-text'>
@@ -97,7 +93,7 @@ function Home() {
         </div>
       </section>
     </div>
-  );
+  )
 }
 
-export default Home;
+export default Home

@@ -18,8 +18,6 @@ export default function App() {
         <Route path="/framework" element={<Framework />} />
         <Route path="/learn-more" element={<LearnMore />} />
         <Route path="/paper" element={<Paper />} />
-        {/* opzionale: catch-all */}
-        {/* <Route path="*" element={<Home />} /> */}
       </Routes>
       <Footer />
     </>
