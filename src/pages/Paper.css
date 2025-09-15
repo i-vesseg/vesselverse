@@ -1,135 +1,260 @@
+/* src/components/Paper.css */
+
 .paper-page {
-    padding: 4rem 1rem;
-    max-width: 1000px;
-    margin: 0 auto;
-    color: #333;
-  }
-  .highlight-section {
-    width: 100vw;
-    margin-left: calc(-50vw + 50%);
-    background-color: #FFE8E8;
-    padding: 2rem 1rem;
+  padding: 4rem 1rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  color: #333;
+}
+.highlight-section {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  background-color: #FFE8E8;
+  padding: 2rem 1rem;
+}
+
+.button-paper{
+  display: flex;
+  flex-direction: row;
+  gap: 1em
+}
+
+
+.desktop-photo {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.mobile-photo {
+  display: none;
+}
+
+
+.section-heading {
+  margin: 2.5rem 0 1rem;
+  text-align: center;
+  font-size: 2rem;
+  margin-top: 8rem;
+}
+
+.authors-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.author-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 160px;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: #FFE8E8;
+  text-align: center;
+}
+
+.author-name,
+.author-surname {
+  font-size: 1rem;
+}
+
+.author-email {
+  font-size: 0.85rem;
+  color: #ff4081;
+  margin-top: 0.5rem;
+  text-decoration: underline;
+  text-align: center;
+}
+
+.author-email:hover {
+  color: #333;
+}
+
+.author-main-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: #FFE8E8;
+  width: 250px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.author-note {
+  font-size: 0.75rem;
+  color: #888;
+  margin-top: 0.5rem;
+}
+
+.author-affiliation {
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 0.25rem;
+}
+
+
+.bibtex-block {
+  background-color: #FFE8E8;
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  overflow-x: auto;
+  margin-top: 1rem;
+  white-space: pre-wrap;
+  font-family: monospace;
+}
+
+.funding {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.funding img {
+  width: 30%;
+}
+
+@media screen and (max-width: 900px) {
+  .mobile-photo {
+      display: block;
+      margin: 0 auto;
+      width: 100%;
+    }
+  
+  .desktop-photo {
+      display: none;
   }
 
   .button-paper{
-    display: flex;
-    flex-direction: row;
-    gap: 1em
-  }
-  
-
-  .desktop-photo {
-    display: block;
-    margin: 0 auto;
-    width: 100%;
-  }
-
-  .mobile-photo {
-    display: none;
-  }
-
-  
-  .section-heading {
-    margin: 2.5rem 0 1rem;
-    text-align: center;
-    font-size: 2rem;
-    margin-top: 4rem;
-  }
-  
-  .authors-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
-  }
-  
-  .author-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 160px;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    background-color: #FFE8E8;
-    text-align: center;
-  }
-  
-  .author-name,
-  .author-surname {
-    font-size: 1rem;
-  }
-  
-  .author-email {
-    font-size: 0.85rem;
-    color: #ff4081;
-    margin-top: 0.5rem;
-    text-decoration: underline;
-    text-align: center;
-  }
-  
-  .author-email:hover {
-    color: #333;
-  }
-
-  .author-main-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 2rem;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    background-color: #FFE8E8;
-    width: 250px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  
-  .author-note {
-    font-size: 0.75rem;
-    color: #888;
-    margin-top: 0.5rem;
-  }
-
-  .author-affiliation {
-    font-size: 0.85rem;
-    color: #666;
-    margin-top: 0.25rem;
-  }
-  
-  
-  .bibtex-block {
-    background-color: #FFE8E8;
-    padding: 1rem;
-    border-radius: 8px;
-    font-size: 1rem;
-    overflow-x: auto;
-    margin-top: 1rem;
-    white-space: pre-wrap;
-    font-family: monospace;
-  }
-
-  .funding {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-  }
-  .funding img {
-    width: 30%;
-  }
-  
-  @media screen and (max-width: 900px) {
-    .mobile-photo {
-        display: block;
-        margin: 0 auto;
-        width: 100%;
-      }
-    
-    .desktop-photo {
-        display: none;
+      display: flex;
+      flex-direction: column;
     }
+}
 
-    .button-paper{
-        display: flex;
-        flex-direction: column;
-      }
-  }
+
+.contact-wrap{
+max-width: 860px;
+margin: 0 auto 2rem;
+text-align: center;
+}
+
+.contact-subtitle{
+margin: .25rem auto 1.5rem;
+color: #666;
+font-size: 1rem;
+}
+
+.contact-grid{
+display: grid;
+grid-template-columns: repeat(2, minmax(0, 1fr));
+gap: 1.25rem;
+align-items: stretch;
+}
+
+.contact-card{
+position: relative;
+display: flex;
+flex-direction: column;
+gap: .6rem;
+padding: 1.25rem;
+border-radius: 14px;
+background:
+  radial-gradient(100% 60% at 100% 0, #ffffff 0 50%, rgba(255,255,255,0) 51%),
+  #FFE8E8;
+box-shadow: 0 6px 18px rgba(0,0,0,.08);
+border: 1px solid rgba(0,0,0,.06);
+transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+
+.contact-card:hover{
+transform: translateY(-2px);
+box-shadow: 0 10px 28px rgba(0,0,0,.12);
+border-color: rgba(0,0,0,.1);
+}
+
+.contact-avatar{
+width: 56px;
+height: 56px;
+border-radius: 50%;
+display: grid;
+place-items: center;
+font-weight: 700;
+letter-spacing: .3px;
+color: #fff;
+background:  #d02d2f;
+margin: 0 auto .25rem;
+box-shadow: 0 4px 12px rgba(255,64,129,.25);
+}
+
+.contact-id{
+display: flex;
+flex-direction: column;
+align-items: center;
+line-height: 1.2;
+}
+
+.contact-name{
+font-weight: 600;
+font-size: 1.05rem;
+color: #333;
+}
+
+.contact-surname{
+font-weight: 700;
+font-size: 1.1rem;
+color: #333;
+margin-top: -2px;
+}
+
+.contact-affiliation{
+font-size: .9rem;
+color: #666;
+margin-top: .25rem;
+}
+
+/* bottone email */
+.contact-btn{
+margin-top: .5rem;
+display: inline-flex;
+align-items: center;
+gap: .5rem;
+justify-content: center;
+padding: .6rem 1rem;
+border-radius: 999px;
+text-decoration: none;
+font-size: .95rem;
+color: #fff;
+background: linear-gradient(135deg, #d02d2f, #333333);
+box-shadow: 0 8px 18px rgba(255,64,129,.25);
+transition: transform .12s ease, box-shadow .18s ease, filter .18s ease;
+}
+
+.contact-btn:hover{
+transform: translateY(-1px);
+box-shadow: 0 12px 26px rgba(255,64,129,.3);
+filter: saturate(1.04);
+}
+
+.contact-btn:focus-visible{
+outline: 3px solid rgba(255,64,129,.35);
+outline-offset: 3px;
+}
+
+/* icona busta via background SVG */
+.contact-btn-icon{
+width: 16px;
+height: 16px;
+background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23ffffff" viewBox="0 0 16 16"><path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v.217L8 9 0 4.217V4zm0 1.383V12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V5.383l-7.555 4.72a1 1 0 0 1-1.09 0L0 5.383z"/></svg>') center/contain no-repeat;
+}
+
+/* responsive */
+@media (max-width: 860px){
+.contact-grid{
+  grid-template-columns: 1fr;
+}
+}
