@@ -10,7 +10,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d build -b gh-pages"
   },
   "dependencies": {
     "@niivue/niivue": "^0.52.0",
