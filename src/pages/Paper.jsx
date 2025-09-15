@@ -106,12 +106,15 @@ export default function Paper() {
       <h2 className="section-heading">Citation</h2>
       <p>If you use VesselVerse, please cite:</p>
       <pre className="bibtex-block">
-{`@inproceedings{falcetta2025vesselverse,
-  title     = {VesselVerse: A Dataset and Collaborative Framework for Vessel Annotation},
-  author    = {Daniele Falcetta and Vincenzo Marciano and Kaiyuan Yang and Jon Cleary and Loic Legris and Massimiliano D. Rizzaro and Ioannis Pitsiorlas and Hava Chaptoukaev and Benjamin Lemasson and Bjoern Menze and Maria A. Zuluaga},
-  booktitle = {Proceedings of the International Conference on Medical Image Computing and Computer-Assisted Intervention (MICCAI)},
-  year      = {2025},
-  note      = {Early accepted — among the top 9\% of submissions}
+{`@InProceedings{ FalDan_VesselVerse_MICCAI2025,
+  author = { Falcetta, Daniele and Marciano, Vincenzo and Yang, Kaiyuan and Cleary, Jon and Legris, Loïc and Rizzaro, Massimiliano Domenico and Pitsiorlas, Ioannis and Chaptoukaev, Hava and Lemasson, Benjamin and Menze, Bjoern and Zuluaga, Maria A. },
+  title = { { VesselVerse: A Dataset and Collaborative Framework for Vessel Annotation } }, 
+  booktitle = {Medical Image Computing and Computer Assisted Intervention -- MICCAI 2025},
+  year = {2025},
+  publisher = {Springer Nature Switzerland},
+  volume = { LNCS 15972 },
+  month = {October},
+  pages = { 656 -- 666 }
 }
 `}
       </pre>
