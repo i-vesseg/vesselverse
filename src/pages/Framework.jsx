@@ -33,7 +33,7 @@ function Framework() {
             producing high-quality, traceable, and adaptable segmentation datasets.
           </p>
           <a
-            href="https://anonymous.4open.science/r/VesselverseModule"
+            href="https://github.com/i-vesseg/VesselVerse-Framework"
             target="_blank"
             className="btn clickable"
             rel="noopener noreferrer"

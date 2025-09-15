@@ -23,16 +23,17 @@ export default function Paper() {
         <div className="hero-content">
           <h1 style={{ marginBottom: '1em' }}>Do you want to learn more about VesselVerse?</h1>
           <div className='button-paper'>
-            <a
-              href={`${base}VesselVerse.pdf`}
-              download="VesselVerse.pdf"
-              className="btn"
+          <a
+              href="https://papers.miccai.org/miccai-2025/paper/0087_paper.pdf"
+              target="_blank"
+              className="btn clickable"
+              rel="noopener noreferrer"
             >
               <i className="fas fa-file-download" style={{ marginRight: '0.5rem' }}></i>
               Download the paper
             </a>
             <a
-              href="https://anonymous.4open.science/r/VesselverseDatasets"
+              href="https://github.com/i-vesseg/VesselVerse-Dataset"
               target="_blank"
               className="btn clickable"
               rel="noopener noreferrer"
@@ -41,7 +42,7 @@ export default function Paper() {
               More about the Dataset
             </a>
             <a
-              href="https://anonymous.4open.science/r/VesselverseModule"
+              href="https://github.com/i-vesseg/VesselVerse-Framework"
               target="_blank"
               className="btn clickable"
               rel="noopener noreferrer"

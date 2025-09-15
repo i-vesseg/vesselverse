@@ -27,7 +27,7 @@ function Dataset() {
               For each dataset, VesselVerse also provides a <strong><Link to="/framework#pillars" style={{ color: '#ff6565' }}>STAPLE-based consensus annotation</Link></strong>, allowing users to access high-confidence segmentations derived from multiple inputs.
             </p>
             <a
-              href="https://anonymous.4open.science/r/VesselverseDatasets"
+              href="https://github.com/i-vesseg/VesselVerse-Dataset"
               target="_blank"
               className="btn clickable"
               rel="noopener noreferrer"
