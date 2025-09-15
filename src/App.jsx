@@ -7,6 +7,7 @@ import Framework from './pages/Framework'
 import LearnMore from './pages/LearnMore'
 import Paper from './pages/Paper'
 import Footer from './components/Footer'
+import './App.css'
 
 export default function App() {
   return (
