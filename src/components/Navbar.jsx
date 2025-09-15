@@ -1,5 +1,6 @@
+// src/components/Navbar.jsx
 import { useState } from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -11,7 +12,9 @@ function Navbar() {
     <nav className="navbar">
       <div className="nav-container">
         <div className="nav-brand">
-          <img src={`${base}logo_esteso_trasp.png`} alt="VesselVerse" />
+          <Link to="/" onClick={() => setMenuOpen(false)}>
+            <img src={`${base}logo_esteso_trasp.png`} alt="VesselVerse" />
+          </Link>
         </div>
         <button className="nav-toggle" onClick={handleToggle}>
           {menuOpen ? '▼' : (
