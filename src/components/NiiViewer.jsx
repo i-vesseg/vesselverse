@@ -2,14 +2,8 @@
 import React, { useEffect, useRef } from 'react'
 import { Niivue } from '@niivue/niivue'
 
-function withBase(p) {
-  if (!p) return p
-  if (/^https?:\/\//i.test(p)) return p
-  const base = import.meta.env.BASE_URL || '/'
-  return `${base}${p.replace(/^\//, '')}`
-}
-
 const NiiViewer = ({ niftiPath }) => {
+  const base = import.meta.env.BASE_URL
   const canvasRef = useRef(null)
 
   useEffect(() => {
@@ -21,6 +15,7 @@ const NiiViewer = ({ niftiPath }) => {
 
     nv.attachToCanvas(canvasRef.current)
 
+    // Resize canvas to fit container
     const resizeCanvas = () => {
       const canvas = canvasRef.current
       if (canvas && canvas.parentElement) {
@@ -35,14 +30,12 @@ const NiiViewer = ({ niftiPath }) => {
 
     nv.loadVolumes([
       {
-        url: withBase(niftiPath),
+        url: niftiPath,
         volume: { hdr: null, img: null },
       },
     ])
 
-    return () => {
-      window.removeEventListener('resize', resizeCanvas)
-    }
+    return () => window.removeEventListener('resize', resizeCanvas)
   }, [niftiPath])
 
   return (
@@ -50,8 +43,8 @@ const NiiViewer = ({ niftiPath }) => {
       <canvas
         ref={canvasRef}
         style={{
-          width: '100%',
-          height: '100%',
+          width: '800',
+          height: '800',
           display: 'block'
         }}
       />
