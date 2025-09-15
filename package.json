@@ -1,16 +1,17 @@
 {
   "name": "vesselversesite",
-  "homepage": "https://AlexArgese.github.io/vesselverse",
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://AlexArgese.github.io/vesselverse",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "postbuild": "cp dist/index.html dist/404.html",
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build -b gh-pages"
+    "deploy": "gh-pages -d dist -b gh-pages"
   },
   "dependencies": {
     "@niivue/niivue": "^0.52.0",
