@@ -54,7 +54,6 @@ export default function Paper() {
       </section>
 
       <section className="paper-page">
-        {/* Attenzione: evita spazi nei nomi file; rinomina in "vesselverse_rettangolo.png" nel public */}
         <img className='desktop-photo' src={`${base}vesselverse_rettangolo.png`} alt="" />
         <img className='mobile-photo' src={`${base}logo_home.png`} alt="" />
 
