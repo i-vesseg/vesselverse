@@ -50,40 +50,7 @@ export default function Paper() {
       <img className='desktop-photo' src='/vesselverse rettangolo.png'/>
       <img className='mobile-photo' src='/logo_home.png'/>
 
-      {/* ---------- CONTACT  ---------- */}
-      <h1 className="section-heading">Contact</h1>
-      <div className="contact-wrap">
-        <p className="contact-subtitle">
-          Questions about VesselVerse? Reach out to the project contacts below.
-        </p>
-        <div className="contact-grid">
-          {/* Daniele */}
-          <div className="contact-card">
-            <div className="contact-avatar" aria-hidden="true">DF</div>
-            <div className="contact-id">
-              <span className="contact-name">Daniele</span>
-              <span className="contact-surname">Falcetta</span>
-            </div>
-            <a href="mailto:daniele.falcetta@eurecom.fr" className="contact-btn">
-              <span className="contact-btn-icon" aria-hidden="true"></span>
-              daniele.falcetta@eurecom.fr
-            </a>
-          </div>
-
-          {/* Maria */}
-          <div className="contact-card">
-            <div className="contact-avatar" aria-hidden="true">MZ</div>
-            <div className="contact-id">
-              <span className="contact-name">Maria A.</span>
-              <span className="contact-surname">Zuluaga</span>
-            </div>
-            <a href="mailto:maria.zuluaga@eurecom.fr" className="contact-btn">
-              <span className="contact-btn-icon" aria-hidden="true"></span>
-              maria.zuluaga@eurecom.fr
-            </a>
-          </div>
-        </div>
-      </div>
+      
 
       {/* ---------- AUTHORS ---------- */}
 
@@ -119,10 +86,45 @@ export default function Paper() {
 `}
       </pre>
 
+      {/* ---------- CONTACT  ---------- */}
+      <h1 className="section-heading">Contact</h1>
+      <div className="contact-wrap">
+        <p className="contact-subtitle">
+          Questions about VesselVerse? Reach out to the project contacts below.
+        </p>
+        <div className="contact-grid">
+          {/* Daniele */}
+          <div className="contact-card">
+            <div className="contact-avatar" aria-hidden="true">DF</div>
+            <div className="contact-id">
+              <span className="contact-name">Daniele</span>
+              <span className="contact-surname">Falcetta</span>
+            </div>
+            <a href="mailto:daniele.falcetta@eurecom.fr" className="contact-btn">
+              <span className="contact-btn-icon" aria-hidden="true"></span>
+              daniele.falcetta@eurecom.fr
+            </a>
+          </div>
+
+          {/* Maria */}
+          <div className="contact-card">
+            <div className="contact-avatar" aria-hidden="true">MZ</div>
+            <div className="contact-id">
+              <span className="contact-name">Maria A.</span>
+              <span className="contact-surname">Zuluaga</span>
+            </div>
+            <a href="mailto:maria.zuluaga@eurecom.fr" className="contact-btn">
+              <span className="contact-btn-icon" aria-hidden="true"></span>
+              maria.zuluaga@eurecom.fr
+            </a>
+          </div>
+        </div>
+      </div>
+
       <h2 className="section-heading">Funding</h2>
       <div className='funding'>
         <img src='/ANR-funded-project.jpg'/>
-        <img src='/EN_fundedbyEU_VERTICAL_RGB_POS.png'/>
+        <img src='/new_fundingEU.png'/>
       </div>
     </section>
     </>
