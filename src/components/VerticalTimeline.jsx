@@ -1,26 +1,29 @@
+// src/VerticalTimeline.jsx
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import "./VerticalTimeline.css";
 
+// Utility per path con base
+function withBase(p) {
+  if (!p) return p;
+  if (/^https?:\/\//i.test(p)) return p;
+  const base = import.meta.env.BASE_URL || "/";
+  return `${base}${p.replace(/^\//, "")}`;
+}
+
 function useScrollDirection() {
   const [scrollDir, setScrollDir] = useState("down");
-
   useEffect(() => {
     let lastScrollY = window.pageYOffset;
     const handleScroll = () => {
       const currentScrollY = window.pageYOffset;
-      if (currentScrollY > lastScrollY) {
-        setScrollDir("down");
-      } else if (currentScrollY < lastScrollY) {
-        setScrollDir("up");
-      }
+      if (currentScrollY > lastScrollY) setScrollDir("down");
+      else if (currentScrollY < lastScrollY) setScrollDir("up");
       lastScrollY = currentScrollY > 0 ? currentScrollY : 0;
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
   return scrollDir;
 }
 
@@ -59,22 +62,19 @@ const steps = [
 
 export default function VerticalTimeline() {
   const scrollDirection = useScrollDirection();
-
   const animationVariant =
     scrollDirection === "down"
       ? { hidden: { y: 100, opacity: 0 }, visible: { y: 0, opacity: 1 } }
       : { hidden: { y: -100, opacity: 0 }, visible: { y: 0, opacity: 1 } };
 
+  const stepsWithBase = steps.map(s => ({ ...s, image: withBase(s.image) }));
+
   return (
     <div className="vertical-timeline-container">
-
       <div className="vertical-line"></div>
-
-      {steps.map((step) => (
+      {stepsWithBase.map((step) => (
         <div className="timeline-step" key={step.id}>
-
           <div className="step-circle"></div>
-
           <motion.div
             className="step-content"
             variants={animationVariant}
@@ -88,7 +88,7 @@ export default function VerticalTimeline() {
               <p
                 className="step-description"
                 dangerouslySetInnerHTML={{ __html: step.description }}
-              ></p>
+              />
             </div>
             <div className="image-block">
               <img src={step.image} alt={step.title} className="step-image" />

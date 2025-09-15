@@ -1,9 +1,16 @@
 import { useState, useRef } from "react";
 
+// Utility per path con base
+function withBase(p) {
+  if (!p) return p;
+  if (/^https?:\/\//i.test(p)) return p;
+  const base = import.meta.env.BASE_URL || "/";
+  return `${base}${p.replace(/^\//, "")}`;
+}
+
 export default function VesselAnimation() {
   const [sliderValue, setSliderValue] = useState(50);
   const containerRef = useRef(null);
-  const handleRef = useRef(null);
 
   const handleMouseMove = (e) => {
     if (!containerRef.current) return;
@@ -29,7 +36,7 @@ export default function VesselAnimation() {
       onMouseMove={handleMouseMove}
     >
       <img
-        src="/brain_xray_before.png"
+        src={withBase("/brain_xray_before.png")}
         alt="Brain X-ray Before"
         style={{
           position: "absolute",
@@ -53,7 +60,7 @@ export default function VesselAnimation() {
         }}
       >
         <img
-          src="/brain_xray_after.png"
+          src={withBase("/brain_xray_after.png")}
           alt="Brain X-ray After"
           style={{
             width: "100%",
@@ -64,7 +71,6 @@ export default function VesselAnimation() {
         />
       </div>
       <div
-        ref={handleRef}
         className="slider-handle"
         style={{
           position: "absolute",

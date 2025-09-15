@@ -1,7 +1,16 @@
+// src/DatasetExplorer.jsx
 import { useState } from "react";
 import { motion } from "framer-motion";
 import "./DatasetExplorer.css";
 import NiiViewer from "./NiiViewer";
+
+// Utility per path con base
+function withBase(p) {
+  if (!p) return p;
+  if (/^https?:\/\//i.test(p)) return p;
+  const base = import.meta.env.BASE_URL || "/";
+  return `${base}${p.replace(/^\//, "")}`;
+}
 
 const datasets = {
   dataset1: {
@@ -75,8 +84,10 @@ export default function DatasetExplorer() {
     }
   };
 
-  const currentNiftiPath =
-    datasets[selectedDataset].niftiPaths[selectedFilter];
+  // Applica BASE_URL al path selezionato
+  const currentNiftiPath = withBase(
+    datasets[selectedDataset].niftiPaths[selectedFilter]
+  );
 
   return (
     <div className="dataset-explorer">
