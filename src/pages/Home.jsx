@@ -3,8 +3,10 @@ import { Link } from 'react-router-dom'
 import './Home.css'
 
 const newsItems = [
-  { date: 'May 2025', text: 'VesselVerse accepted at MICCAI 2025', isNew: false },
-  { date: 'June 2025 (planned)', text: 'Release of code and dataset via GitHub', isNew: true },
+  { date: '25 September 2025 - 11:00 KST', text: 'Poster Presentation B282 - Poster Session 2 (DCC2)', isNew: true },
+  { date: '24 September 2025 - 17:00 KST', text: 'Spotlight Presentation at MICCAI 2025 - Oral & Spotlight Session 6', isNew: true },
+  { date: '16-17 September 2025', text: 'Release of code and dataset via GitHub', isNew: true },
+  { date: 'May 2025', text: 'VesselVerse accepted at MICCAI 2025', isNew: false }, 
 ]
 
 function Home() {
