@@ -7,6 +7,7 @@ import Framework from './pages/Framework'
 import LearnMore from './pages/LearnMore'
 import Paper from './pages/Paper'
 import Footer from './components/Footer'
+import BackToTop from './components/BackToTop'
 
 export default function App() {
   return (
@@ -20,6 +21,7 @@ export default function App() {
         <Route path="/paper" element={<Paper />} />
       </Routes>
       <Footer />
+      <BackToTop />
     </>
   )
 }

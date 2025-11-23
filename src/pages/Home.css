@@ -277,6 +277,30 @@
     border-radius: 999px;
     text-transform: uppercase;
   }
+
+  /* Toggle button for News: match primary buttons but smaller */
+  .news-toggle-btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.08s ease;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  }
+
+  .news-toggle-btn:hover {
+    background-color: #e73370;
+    transform: translateY(-1px);
+  }
+
+  .news-toggle-btn:focus {
+    outline: 3px solid rgba(231,51,112,0.18);
+    outline-offset: 3px;
+  }
   
   
   

@@ -52,6 +52,11 @@ html, body {
   position: relative;
 }
 
+/* alternate layout: image left / text right for odd steps */
+.timeline-step .step-content.alt {
+  flex-direction: row-reverse;
+}
+
 .text-block {
   flex: 0 0 45%;
   text-align: left;

@@ -3,14 +3,17 @@ import { Link } from 'react-router-dom'
 import './Home.css'
 
 const newsItems = [
-  { date: '25 September 2025 - 11:00 KST', text: 'Poster Presentation B282 - Poster Session 2 (DCC2)', isNew: true },
-  { date: '24 September 2025 - 17:00 KST', text: 'Spotlight Presentation at MICCAI 2025 - Oral & Spotlight Session 6', isNew: true },
-  { date: '16-17 September 2025', text: 'Release of code and dataset via GitHub', isNew: true },
+  { date: '20 November 2025', text: 'Poster presentation at Sophia AI Summit 2025', isNew: true },
+  { date: 'Ottober 2025', text: 'Release of the code via email request', isNew: false },
+  { date: '25 September 2025 - 11:00 KST', text: 'Poster Presentation B282 - Poster Session 2 (DCC2)', isNew: false },
+  { date: '24 September 2025 - 17:00 KST', text: 'Spotlight Presentation at MICCAI 2025 - Oral & Spotlight Session 6', isNew: false },
+  { date: '16-17 September 2025', text: 'Release of code and dataset via GitHub', isNew: false },
   { date: 'May 2025', text: 'VesselVerse accepted at MICCAI 2025', isNew: false }, 
 ]
 
 function Home() {
   const [videoEnded, setVideoEnded] = useState(false)
+  const [showAllNews, setShowAllNews] = useState(false)
   const base = import.meta.env.BASE_URL
 
   useEffect(() => {
@@ -51,16 +54,31 @@ function Home() {
       <section className="info-section news-section">
         <h2 className="section-title" style={{textAlign:'center'}}>News & Updates</h2>
         <div className="news-grid">
-          {newsItems.map((item, index) => (
-            <div className="news-card" key={index}>
-              <div className="news-header">
-                <span className="news-date">{item.date}</span>
-                {item.isNew && <span className="news-badge">NEW</span>}
+          {(() => {
+            const visible = showAllNews ? newsItems : newsItems.slice(0, 3)
+            return visible.map((item, index) => (
+              <div className="news-card" key={index}>
+                <div className="news-header">
+                  <span className="news-date">{item.date}</span>
+                  {item.isNew && <span className="news-badge">NEW</span>}
+                </div>
+                <p className="news-text">{item.text}</p>
               </div>
-              <p className="news-text">{item.text}</p>
-            </div>
-          ))}
+            ))
+          })()}
         </div>
+
+        {newsItems.length > 3 && (
+          <div style={{textAlign: 'center', marginTop: '1rem'}}>
+            <button
+              className="news-toggle-btn"
+              onClick={() => setShowAllNews((s) => !s)}
+              aria-expanded={showAllNews}
+            >
+              {showAllNews ? 'Show less' : 'Show more'}
+            </button>
+          </div>
+        )}
       </section>
 
       <section className="info-section first-section" style={{paddingTop:'5rem'}}>

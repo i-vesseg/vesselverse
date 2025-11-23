@@ -17,6 +17,20 @@ export default function Paper() {
     { name: 'Maria A.', surname: 'Zuluaga', affiliation: 'EURECOM'},
   ]
 
+  const affiliationLogos = {
+    'EURECOM': 'EURECOM_logo.png',
+    'University of Zurich': 'UZ.png',
+    "King's College London": "King's_College_London_logo.svg.png",
+    'CHU Grenoble': 'CHU_Grenoble.png',
+    'University of Milan': 'UMilan.png',
+    'Grenoble Institute of Neuroscience': 'GIN.svg'
+  }
+
+  const logoForAffiliation = (aff) => {
+    const file = affiliationLogos[aff] || null
+    return file ? `${base}logos/${file}` : null
+  }
+
   return (
     <>
       <section className="highlight-section">
@@ -60,15 +74,27 @@ export default function Paper() {
 
         <h1 className="section-heading">Authors</h1>
         <div className="author-main-card">
-          <div className="author-name">Daniele</div>
-          <div className="author-surname">Falcetta</div>
-          <div className="author-affiliation">EURECOM</div>
+          <div className="main-content">
+            <div className="author-fullname">Daniele Falcetta</div>
+            <div className="author-affiliation">EURECOM</div>
+          </div>
+          <img
+            src={logoForAffiliation('EURECOM')}
+            alt="EURECOM logo"
+            className="author-logo-main"
+          />
         </div>
         <div className="authors-container">
           {authors.map((author, i) => (
             <div key={i} className="author-card">
-              <div className="author-name">{author.name}</div>
-              <div className="author-surname">{author.surname}</div>
+              {logoForAffiliation(author.affiliation) && (
+                <img
+                  className="author-logo"
+                  src={logoForAffiliation(author.affiliation)}
+                  alt={`${author.affiliation} logo`}
+                />
+              )}
+              <div className="author-fullname">{`${author.name} ${author.surname}`}</div>
               <div className="author-affiliation">{author.affiliation}</div>
             </div>
           ))}

@@ -1,25 +1,7 @@
 // src/VerticalTimeline.jsx
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import "./VerticalTimeline.css";
-
-function useScrollDirection() {
-  const [scrollDir, setScrollDir] = useState("down");
-
-  useEffect(() => {
-    let lastScrollY = window.pageYOffset;
-    const handleScroll = () => {
-      const currentScrollY = window.pageYOffset;
-      if (currentScrollY > lastScrollY) setScrollDir("down");
-      else if (currentScrollY < lastScrollY) setScrollDir("up");
-      lastScrollY = currentScrollY > 0 ? currentScrollY : 0;
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  return scrollDir;
-}
 
 // Manteniamo i path “logici” e aggiungiamo BASE_URL in render
 const steps = [
@@ -56,13 +38,7 @@ const steps = [
 ];
 
 export default function VerticalTimeline() {
-  const scrollDirection = useScrollDirection();
   const base = import.meta.env.BASE_URL;
-
-  const animationVariant =
-    scrollDirection === "down"
-      ? { hidden: { y: 100, opacity: 0 }, visible: { y: 0, opacity: 1 } }
-      : { hidden: { y: -100, opacity: 0 }, visible: { y: 0, opacity: 1 } };
 
   // aggiunge BASE_URL davanti ai path che iniziavano con “/…”
   const stepsWithBase = steps.map((s) => ({
@@ -74,31 +50,39 @@ export default function VerticalTimeline() {
     <div className="vertical-timeline-container">
       <div className="vertical-line"></div>
 
-      {stepsWithBase.map((step) => (
-        <div className="timeline-step" key={step.id}>
-          <div className="step-circle"></div>
+      {stepsWithBase.map((step, idx) => {
+        const isEven = idx % 2 === 0;
+        const variants = {
+          hidden: { x: isEven ? -120 : 120, y: 30, opacity: 0 },
+          visible: { x: 0, y: 0, opacity: 1 },
+        };
 
-          <motion.div
-            className="step-content"
-            variants={animationVariant}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.5 }}
-            transition={{ duration: 0.6 }}
-          >
-            <div className="text-block">
-              <h2 className="step-title">{step.title}</h2>
-              <p
-                className="step-description"
-                dangerouslySetInnerHTML={{ __html: step.description }}
-              />
-            </div>
-            <div className="image-block">
-              <img src={step.image} alt={step.title} className="step-image" />
-            </div>
-          </motion.div>
-        </div>
-      ))}
+        return (
+          <div className="timeline-step" key={step.id}>
+            <div className="step-circle"></div>
+
+            <motion.div
+              className={`step-content ${isEven ? "" : "alt"}`}
+              variants={variants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: false, amount: 0.25 }}
+              transition={{ duration: 0.6, ease: [0.2, 0.8, 0.2, 1] }}
+            >
+              <div className="text-block">
+                <h2 className="step-title">{step.title}</h2>
+                <p
+                  className="step-description"
+                  dangerouslySetInnerHTML={{ __html: step.description }}
+                />
+              </div>
+              <div className="image-block">
+                <img src={step.image} alt={step.title} className="step-image" />
+              </div>
+            </motion.div>
+          </div>
+        );
+      })}
     </div>
   );
 }

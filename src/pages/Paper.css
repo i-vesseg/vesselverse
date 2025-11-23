@@ -43,22 +43,43 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 2rem;
+  max-width: 960px;
+  margin: 0 auto;
 }
 
 .author-card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 160px;
+  width: 100%;
+  max-width: 220px;
   padding: 1rem;
   border-radius: 0.5rem;
   background-color: #FFE8E8;
   text-align: center;
+  transition: transform .18s ease, box-shadow .18s ease;
+  box-shadow: 0 6px 14px rgba(0,0,0,.06);
+  border: 1px solid rgba(0,0,0,0.04);
 }
 
-.author-name,
-.author-surname {
+.author-card:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 14px 32px rgba(0,0,0,.12);
+  border-color: rgba(0,0,0,.08);
+}
+
+.author-logo{
+  height: 55px;
+  object-fit: contain;
+  margin-bottom: 0.6rem;
+}
+
+.author-fullname {
   font-size: 1rem;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .author-email {
@@ -75,15 +96,26 @@
 
 .author-main-card {
   display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  gap: 1rem;
   margin-bottom: 2rem;
-  padding: 1rem;
+  padding: 0.8rem 1.2rem;
   border-radius: 0.5rem;
   background-color: #FFE8E8;
-  width: 250px;
+  width: fit-content;
+  max-height: 150px;
+  height: 120px;
   margin-left: auto;
   margin-right: auto;
+  box-shadow: 0 8px 20px rgba(0,0,0,.07);
+  border: 1px solid rgba(0,0,0,0.05);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.author-main-card:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 18px 36px rgba(0,0,0,.12);
 }
 
 .author-note {
@@ -96,6 +128,12 @@
   font-size: 0.85rem;
   color: #666;
   margin-top: 0.25rem;
+}
+
+.author-logo-main{
+  height: 70px;
+  object-fit: contain;
+  border-radius: 8px;
 }
 
 

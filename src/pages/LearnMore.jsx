@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import VerticalTimeline from "../components/VerticalTimeline";
 import "./LearnMore.css";
+import Carousel from "../components/Carousel";
 import ScrollToHash from "../components/ScrollToHash"; 
 
 function FAQItem({ question, answer }) {
@@ -23,6 +24,11 @@ function FAQItem({ question, answer }) {
 
 function LearnMore() {
   const faqData = [
+    {
+      question: "How can I get access to the dataset?",
+      answer:
+        "Send an email to <a href=\"mailto:maria.zuluaga@eurecom.fr\">maria.zuluaga@eurecom.fr</a>. More information is available in the official GitHub repository: <a href=\"https://github.com/i-vesseg/VesselVerse-Dataset\" target=\"_blank\" rel=\"noopener noreferrer\">VesselVerse-Dataset</a>."
+    },
     {
       question: "Can I contribute to the dataset?",
       answer:
@@ -61,15 +67,16 @@ function LearnMore() {
 
       <section className="tutorial-video" id="tutorial-video" style={{ paddingTop: '2em' }}>
         <div className="hero-content">
-          <h1 style={{ paddingBottom: '1em' }}>Tutorial: How to use VesselVerse on 3DSlicer</h1>
-          <div className="video-container">
-            <video 
-              src={`${base}/DEMO_VESSELVERSE.mp4`} 
-              controls
-              title="Tutorial VesselVerse su 3DSlicer">
-            </video>
-          </div>
+          <h1 style={{ paddingBottom: '1em' }}>Tutorial & Spotlight</h1>
         </div>
+
+        <Carousel
+          items={[
+            { type: 'video', src: `${base}/DEMO_VESSELVERSE.mp4`, title: 'Tutorial: VesselVerse on 3DSlicer' },
+            { type: 'iframe', src: 'https://docs.google.com/presentation/d/e/2PACX-1vS8QmLiK4eEYXey9R3wTa7ZAynD-pmmRXJCwRXcPrOUlFexIOvaGiF3TbXjXnUETw/pubembed?start=false&loop=true&delayms=3000', title: 'Spotlight Presentation 1' },
+            { type: 'iframe', src: 'https://docs.google.com/presentation/d/e/2PACX-1vSwuAnMpQf1o4BgYQkS9o1Y-AuRmvyjLMq9O3kJM5ohU3Nktn-8jrkDV-W_dJ46uQ/pubembed?start=false&loop=true&delayms=3000', title: 'Spotlight Poster' }
+          ]}
+        />
       </section>
 
       <section style={{ backgroundColor: '#FFE8E8', padding: '1em' }}>
