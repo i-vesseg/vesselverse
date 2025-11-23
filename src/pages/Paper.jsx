@@ -52,7 +52,7 @@ export default function Paper() {
               className="btn clickable"
               rel="noopener noreferrer"
             >
-              <img className='btn' src={`${base}github_icon.png`} alt="" />
+              <img className='btn-icon' src={`${base}github_icon.png`} alt="" />
               More about the Dataset
             </a>
             <a
@@ -61,7 +61,7 @@ export default function Paper() {
               className="btn clickable"
               rel="noopener noreferrer"
             >
-              <img className='btn' src={`${base}github_icon.png`} alt="" />
+              <img className='btn-icon' src={`${base}github_icon.png`} alt="" />
               More about the Framework
             </a>
           </div>

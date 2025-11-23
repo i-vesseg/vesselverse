@@ -382,6 +382,12 @@ a{
 
   .nav-btn-fill {
     margin-top: 0.5rem;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .nav-btn-fill img {
+    margin-left: 0.5rem;
   }
 
   .big-footer {

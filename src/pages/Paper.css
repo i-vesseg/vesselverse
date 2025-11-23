@@ -20,6 +20,13 @@
   gap: 1em
 }
 
+.btn-icon {
+  height: 1.5em;
+  width: auto;
+  margin-right: 0.5em;
+  vertical-align: middle;
+}
+
 
 .desktop-photo {
   display: block;
@@ -179,6 +186,44 @@
       display: flex;
       flex-direction: column;
     }
+}
+
+@media screen and (max-width: 600px) {
+  .author-main-card {
+    width: 90%;
+    max-width: 100%;
+    padding: 1.25rem 1rem;
+    flex-direction: column;
+    height: auto;
+    max-height: none;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .author-main-card .main-content {
+    order: 2;
+  }
+
+  .author-main-card .author-logo-main {
+    order: 1;
+    height: 60px;
+  }
+
+  .author-fullname {
+    font-size: 1.1rem;
+  }
+
+  .author-affiliation {
+    font-size: 0.9rem;
+  }
+
+  .highlight-section .button-paper .btn:first-child {
+    background-color: #e73370;
+  }
+
+  .highlight-section .button-paper .btn:first-child:hover {
+    background-color: #d02060;
+  }
 }
 
 
