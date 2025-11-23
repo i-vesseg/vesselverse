@@ -58,17 +58,19 @@
   .info-section {
     min-width: 100vw;
     margin: 0;
-    padding: 2rem 15%;
-    background-color: #fff;
+    padding: 3rem 15%;
+    background: linear-gradient(to bottom, #ffffff 0%, #fafafa 100%);
     color: #000;
     position: relative;
     z-index: 3;
   }
   
   .section-title {
-    margin-bottom: 1.5rem;
-    font-size: 1.75rem;
-    color: #333;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #222;
+    letter-spacing: -0.02em;
   }
   
   .content-row {
@@ -106,14 +108,17 @@
     background-color: #000;
     color: #fff;
     text-decoration: none;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
-    font-weight: 500;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-weight: 600;
     white-space: nowrap;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   }
   
   .btn:hover {
     background-color: #e73370;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(231, 51, 112, 0.3);
   }
   
   .fade-box {
@@ -213,10 +218,10 @@
   }
 
   .news-section {
-    background-color: #FFE8E8;
-    padding: 3rem 15%;
-    border-top: 1px solid #eee;
-    border-bottom: 1px solid #eee;
+    background: linear-gradient(135deg, #FFE8E8 0%, #FFD5D5 100%);
+    padding: 4rem 15%;
+    border-top: 2px solid #FFD0D0;
+    border-bottom: 2px solid #FFD0D0;
   }
   
   .news-list {
@@ -241,14 +246,16 @@
   .news-card {
     background-color: #fff;
     border-left: 4px solid #e73370;
-    padding: 1.25rem 1rem;
-    border-radius: 0.5rem;
-    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.06);
-    transition: transform 0.2s ease;
+    padding: 1.5rem 1.25rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
   }
   
   .news-card:hover {
-    transform: translateY(-3px);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    border-left-width: 6px;
   }
   
   .news-header {
@@ -310,27 +317,49 @@
     }
     .hero-content h1 {
       font-size: 2rem;
+      padding: 0 1rem;
+    }
+    .hero-content img {
+      width: 80%;
+      max-width: 400px;
     }
     .info-section {
-      padding: 2rem 5%;
+      padding: 2.5rem 5%;
+    }
+    .section-title {
+      font-size: 1.75rem;
+      margin-bottom: 1.5rem;
     }
     .content-row {
       flex-direction: column;
-      gap: 1rem;
+      gap: 1.5rem;
     }
     .sec-row {
-        flex-direction: column-reverse;
-        align-items: end;
+      flex-direction: column-reverse;
+      align-items: end;
     }
     .fisrt-section {
-        text-align: start;
+      text-align: start;
     }
     .first-row {
-        align-items: start;
+      align-items: start;
     }
     .col-right {
-        align-items: start;
-        justify-content: left;
+      align-items: start;
+      justify-content: left;
+      width: 100%;
+    }
+    .btn {
+      width: 100%;
+      text-align: center;
+      padding: 1rem 1.5rem;
+      font-size: 1rem;
+    }
+    .news-grid {
+      gap: 1rem;
+    }
+    .news-card {
+      padding: 1.25rem 1rem;
     }
   }
   

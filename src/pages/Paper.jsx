@@ -5,7 +5,7 @@ export default function Paper() {
   const base = import.meta.env.BASE_URL
 
   const authors = [
-    { name: 'Vincenzo', surname: 'Marciano', affiliation: 'EURECOM'},
+    { name: 'Vincenzo', surname: "Marciano'", affiliation: 'EURECOM'},
     { name: 'Kaiyuan', surname: 'Yang', affiliation: 'University of Zurich'},
     { name: 'Jon', surname: 'Cleary', affiliation: "King's College London"},
     { name: 'Loic', surname: 'Legris', affiliation: 'CHU Grenoble'},

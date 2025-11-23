@@ -34,24 +34,28 @@
     color: #333;
   }
   
-  .FAQ h2 {
-    font-size: 1.75rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-    text-align: center;
-  }
-  
-  .faq-item {
-    border-bottom: 1px solid #ddd;
-    padding: 1em;
-    transition: background-color 0.3s ease;
-  }
-  
-  .faq-item:hover {
-    background-color: #f5f5f5;
-  }
-  
-  .faq-question {
+.FAQ h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #222;
+  letter-spacing: -0.02em;
+}.faq-item {
+  border-bottom: none;
+  padding: 1.5em;
+  margin-bottom: 1rem;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #ffffff 0%, #f9f9f9 100%);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+  background: linear-gradient(135deg, #FFE8E8 0%, #FFD5D5 100%);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}  .faq-question {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -112,11 +116,17 @@
     }
     .hero-content-learn h1 {
       font-size: 2rem;
+      line-height: 1.3;
       margin: 0 1rem;
+      padding: 1rem 0;
     }
     .info-section-learn {
       margin: 0 5%;
-      padding: 0 0 1rem 0;
+      padding: 0 0 1.5rem 0;
+    }
+    .info-section-learn p {
+      font-size: 1rem;
+      line-height: 1.6;
     }
     .tutorial-video {
       margin: 2em 5%;
@@ -125,17 +135,28 @@
     .FAQ {
       margin: 2em 5%;
     }
+    .FAQ h2 {
+      font-size: 1.75rem;
+      margin-bottom: 1.5rem;
+    }
     .faq-item {
       border-bottom: none;
-      margin-bottom: 1em;
-      padding: 1em;
+      margin-bottom: 1rem;
+      padding: 1.25rem;
+    }
+    .faq-question h3 {
+      font-size: 1.1rem;
+    }
+    .faq-answer {
+      font-size: 0.95rem;
+      line-height: 1.6;
     }
     .paper {
       margin: 3em 5%;
     }
     .video-container {
-        margin-bottom: 2.5em;
-      }
+      margin-bottom: 2.5em;
+    }
   }
   
   /* MEDIA QUERY PER SCHERMI MEDI (da 601px a 1024px) */

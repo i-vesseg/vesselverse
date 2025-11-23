@@ -69,15 +69,15 @@ export default function VerticalTimeline() {
               viewport={{ once: false, amount: 0.25 }}
               transition={{ duration: 0.6, ease: [0.2, 0.8, 0.2, 1] }}
             >
+              <div className="image-block">
+                <img src={step.image} alt={step.title} className="step-image" />
+              </div>
               <div className="text-block">
                 <h2 className="step-title">{step.title}</h2>
                 <p
                   className="step-description"
                   dangerouslySetInnerHTML={{ __html: step.description }}
                 />
-              </div>
-              <div className="image-block">
-                <img src={step.image} alt={step.title} className="step-image" />
               </div>
             </motion.div>
           </div>
