@@ -7,12 +7,16 @@
 VesselVerse Webpage is a React single-page website built with Vite. It showcases the VesselVerse dataset and provides interactive viewers and documentation for medical images (NIfTI, VTK, Three.js-based viewers).
 
 What's new (2025-11-23)
-- Carousel on the Learn More page: includes the tutorial video and two spotlight Google Slides embeds (auto-advance, manual controls).
-- Timeline improvements: timeline steps animate in/out continuously while scrolling (appear/disappear on enter/leave).
-- UI helpers: Back-to-Top butto (persisted preference).
-- Paper page: author logos, improved author cards and responsive layout; FAQ entries added.
+- **Mobile-first optimization**: Comprehensive mobile UI improvements across all pages with touch-friendly interactions, better spacing, and enhanced typography.
+- **Carousel**: Learn More page features an auto-play carousel with tutorial video and two Google Slides embeds (manual controls, responsive sizing).
+- **Timeline enhancements**: Timeline steps animate in/out continuously while scrolling with image-first layout; mobile view features boxed cards with improved readability.
+- **Interactive components**: NiiViewer now includes loading states, error handling with retry logic, and better mobile canvas sizing.
+- **UI polish**: Back-to-Top button and light/dark theme toggle (persisted preference) across all pages.
+- **Paper page**: Author cards with institutional logos, responsive main author card, improved button styling for mobile.
+- **Navbar improvements**: Sticky navbar with gradient background, smooth mobile menu animations, properly centered buttons.
+- **Visual consistency**: Gradient backgrounds, rounded corners, enhanced shadows, and smooth hover effects throughout.
 
-Developer note: several small UI/UX polish changes were applied across pages (hover lift/shadow, responsive grid for authors).
+Developer note: Extensive mobile responsiveness improvements with proper touch targets (≥44px), better visual hierarchy, and consistent design language across all pages.
 
 At a glance
 - Website pages: `Home`, `Dataset`, `Framework`, `Paper`, `LearnMore` (under `src/pages`)
