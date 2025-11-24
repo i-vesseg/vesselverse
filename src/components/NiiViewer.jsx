@@ -19,8 +19,17 @@ const NiiViewer = ({ niftiPath }) => {
 
   useEffect(() => {
     let mounted = true
+    let resizeListener = null
     setLoading(true)
     setError(null)
+
+    // Timeout to prevent infinite loading state
+    const loadingTimeout = setTimeout(() => {
+      if (mounted && loading) {
+        setError('Loading timeout - image may be too large')
+        setLoading(false)
+      }
+    }, 15000) // 15 second timeout
 
     const loadImage = async () => {
       try {
@@ -39,6 +48,7 @@ const NiiViewer = ({ niftiPath }) => {
           show3Dcrosshair: true,
           backColor: [0, 0, 0, 1],
           dragMode: 'contrast',
+          loadingText: 'Loading medical image...',
         })
         nvRef.current = nv
 
@@ -47,40 +57,54 @@ const NiiViewer = ({ niftiPath }) => {
         const resizeCanvas = () => {
           const canvas = canvasRef.current
           if (canvas && canvas.parentElement && mounted) {
-            canvas.width = canvas.parentElement.clientWidth
-            canvas.height = canvas.parentElement.clientHeight
-            nv.drawScene()
+            const parent = canvas.parentElement
+            const width = parent.clientWidth
+            const height = parent.clientHeight
+            
+            if (width > 0 && height > 0) {
+              canvas.width = width
+              canvas.height = height
+              try {
+                nv.drawScene()
+              } catch (e) {
+                console.warn('Draw scene error:', e)
+              }
+            }
           }
         }
 
         // Initial resize with delay for mobile
-        setTimeout(resizeCanvas, 100)
-        window.addEventListener('resize', resizeCanvas)
+        setTimeout(resizeCanvas, 150)
+        
+        resizeListener = resizeCanvas
+        window.addEventListener('resize', resizeListener)
 
         const url = withBase(niftiPath)
+        console.log('Loading NIfTI from:', url)
+        
         await nv.loadVolumes([{ url }])
 
         if (mounted) {
+          clearTimeout(loadingTimeout)
           setLoading(false)
           setError(null)
-          // Force redraw after load
-          setTimeout(resizeCanvas, 200)
-        }
-
-        return () => {
-          window.removeEventListener('resize', resizeCanvas)
+          // Force multiple redraws for mobile
+          setTimeout(resizeCanvas, 100)
+          setTimeout(resizeCanvas, 300)
+          setTimeout(resizeCanvas, 500)
         }
       } catch (err) {
         console.error('NiiViewer load error:', err)
         if (mounted) {
+          clearTimeout(loadingTimeout)
           setError(err.message || 'Failed to load image')
           setLoading(false)
           
-          // Auto retry once on mobile
-          if (retryCount < 1 && window.innerWidth <= 600) {
+          // Auto retry twice on mobile
+          if (retryCount < 2 && window.innerWidth <= 600) {
             setTimeout(() => {
               setRetryCount(prev => prev + 1)
-            }, 1000)
+            }, 1500)
           }
         }
       }
@@ -90,6 +114,10 @@ const NiiViewer = ({ niftiPath }) => {
 
     return () => {
       mounted = false
+      clearTimeout(loadingTimeout)
+      if (resizeListener) {
+        window.removeEventListener('resize', resizeListener)
+      }
       if (nvRef.current) {
         try {
           nvRef.current.closeAllVolumes()
@@ -134,14 +162,21 @@ const NiiViewer = ({ niftiPath }) => {
               setError(null)
             }}
             style={{
-              marginTop: '0.5rem',
-              padding: '0.5rem 1rem',
+              marginTop: '1rem',
+              padding: '0.75rem 1.5rem',
               backgroundColor: '#e73370',
               color: '#fff',
               border: 'none',
-              borderRadius: '4px',
-              cursor: 'pointer'
+              borderRadius: '8px',
+              cursor: 'pointer',
+              fontSize: '1rem',
+              fontWeight: '600',
+              boxShadow: '0 4px 12px rgba(231, 51, 112, 0.3)',
+              transition: 'transform 0.2s ease'
             }}
+            onMouseDown={(e) => e.currentTarget.style.transform = 'scale(0.95)'}
+            onMouseUp={(e) => e.currentTarget.style.transform = 'scale(1)'}
+            onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
           >
             Retry
           </button>
