@@ -59,10 +59,6 @@ export default function Pillars() {
                 >
                   <h3>{pillar.label}</h3>
                 </div>
-                <div
-                  className={`pillarBot clickable ${isActive ? "active" : ""}`}
-                  style={{ padding: "0.7rem" }}
-                />
               </div>
             );
           })}
